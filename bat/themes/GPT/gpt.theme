@@ -1,0 +1,11 @@
+[theme]
+# Syntax elements
+syntax = "38;5;196"    # Red
+string = "38;5;124"    # Darker Red
+keyword = "38;5;160"   # Maroon
+comment = "38;5;242"   # Light Gray
+number = "38;5;208"    # Dark Orange
+attribute = "38;5;166" # Orange
+# Background and text colors
+background = "bg:234"  # Dark Gray
+text = "38;5;220"      # Lighter Gray

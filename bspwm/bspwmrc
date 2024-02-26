@@ -1,0 +1,31 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd -c /home/notroot/.config/sxhkd/sxhkdrc &
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc config focused_border_color "#6b0707"
+bspc config normal_border_color "#0d0c0c"
+bspc config border_width         1
+bspc config window_gap          1
+xset -dpms &
+xset s off &
+
+dunst -config /home/notroot/.config/dunstrc &
+picom &
+source /home/notroot/code/bash/startpolybar.sh &
+feh --bg-fill /home/notroot/.config/wallpaper &
+bspc rule -a Firefox desktop=FIREFOX
+firefox &
+
+
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc rule -a '*:Polybar:*' layer above
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^1'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
